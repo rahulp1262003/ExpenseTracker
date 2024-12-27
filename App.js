@@ -16,9 +16,9 @@ const BottomTabs = createBottomTabNavigator();
 function ExpensesOvervew() {
   return <BottomTabs.Navigator
     screenOptions={{
-      headerStyle: { backgroundColor: GloableStyles.colors.VistaBlue },
+      headerStyle: { backgroundColor: GloableStyles.colors.Blue004 },
       headerTintColor: GloableStyles.colors.Black,
-      tabBarStyle: { backgroundColor: GloableStyles.colors.VistaBlue },
+      tabBarStyle: { backgroundColor: GloableStyles.colors.Blue004 },
       tabBarActiveTintColor: GloableStyles.colors.Black,
     }}
   >

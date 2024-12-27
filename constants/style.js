@@ -1,9 +1,11 @@
 export const GloableStyles = {
-    colors:{
+    colors: {
+        Blue001: '#ecf2ff',
+        Blue002: '#dfdfff',
+        Blue003: '#c0cbff',
+        Blue004: '#8e9fff',
+        Blue005: '#4151ff',
+        Black: '#080708',
         White: '#FFFFFF',
-        Peach: '#FFEFC2',
-        TeaRose: '#F7C9CD',
-        VistaBlue: '#85A9FF',
-        Black: '#080708'
     }
 }
