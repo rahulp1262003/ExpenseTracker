@@ -10,6 +10,7 @@ import AllExpenses from './screens/AllExpenses';
 import { GloableStyles } from './constants/style';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IconButton from './components/UI/IconButton';
+import ExpensesContextProvider from './store/expenses-context';
 
 
 const Stack = createNativeStackNavigator();
@@ -50,21 +51,23 @@ export default function App() {
   return (
     <>
       <StatusBar style="auto" />
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{
-          headerStyle:{ backgroundColor: GloableStyles.colors.Blue004 },
-        }}>
-          <Stack.Screen
-            name='ExpensesOverview'
-            component={ExpensesOvervew}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name='ManageExpense'
-            component={ManageExpense}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <ExpensesContextProvider>
+        <NavigationContainer>
+          <Stack.Navigator screenOptions={{
+            headerStyle: { backgroundColor: GloableStyles.colors.Blue004 },
+          }}>
+            <Stack.Screen
+              name='ExpensesOverview'
+              component={ExpensesOvervew}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name='ManageExpense'
+              component={ManageExpense}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ExpensesContextProvider>
     </>
   );
 }
