@@ -5,7 +5,9 @@ export const GloableStyles = {
         Blue003: '#c0cbff',
         Blue004: '#8e9fff',
         Blue005: '#4151ff',
-        Black: '#080708',
+        Black: '#000000',
         White: '#FFFFFF',
+        Ripple: '#06073d53',
+        Red: '#ff6060'
     }
 }

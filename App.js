@@ -9,18 +9,21 @@ import RecentExpense from './screens/RecentExpense';
 import AllExpenses from './screens/AllExpenses';
 import { GloableStyles } from './constants/style';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import IconButton from './components/UI/IconButton';
+
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
 function ExpensesOvervew() {
   return <BottomTabs.Navigator
-    screenOptions={{
+    screenOptions={({ navigation }) => ({
       headerStyle: { backgroundColor: GloableStyles.colors.Blue004 },
       headerTintColor: GloableStyles.colors.Black,
       tabBarStyle: { backgroundColor: GloableStyles.colors.Blue004 },
       tabBarActiveTintColor: GloableStyles.colors.Black,
-    }}
+      headerRight: ({ tintColor }) => <IconButton size={30} icon="add" color={tintColor} onPress={() => { navigation.navigate('ManageExpense') }} />
+    })}
   >
     <BottomTabs.Screen
       name='RecentExpenses'
@@ -48,7 +51,9 @@ export default function App() {
     <>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+          headerStyle:{ backgroundColor: GloableStyles.colors.Blue004 },
+        }}>
           <Stack.Screen
             name='ExpensesOverview'
             component={ExpensesOvervew}
@@ -63,4 +68,3 @@ export default function App() {
     </>
   );
 }
-
