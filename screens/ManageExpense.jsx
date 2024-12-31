@@ -5,6 +5,7 @@ import IconButton from "../components/UI/IconButton";
 import { GloableStyles } from "../constants/style";
 import Button from "../components/UI/Button";
 import { ExpensesContext } from "../store/expenses-context";
+import ExpenseForm from "../components/ManageExpense/ExpenseForm";
 
 function ManageExpense({ route, navigation }) {
 
@@ -47,7 +48,8 @@ function ManageExpense({ route, navigation }) {
   }
 
   return (
-    <View>
+    <View style={styles.rootContainer}>
+      <ExpenseForm  />
       <View style={styles.buttons}>
         <Button style={styles.button} mode="flat" onPress={cancelHandler}>Cancel</Button>
         <Button style={styles.button} onPress={confirmHandler}>{isEditing ? 'Update' : 'Add'}</Button>
@@ -64,7 +66,9 @@ function ManageExpense({ route, navigation }) {
 export default ManageExpense
 
 const styles = StyleSheet.create({
-
+  rootContainer:{
+    padding: 16
+  },
   deleteContainer: {
     marginTop: 20,
     marginHorizontal: 15,
