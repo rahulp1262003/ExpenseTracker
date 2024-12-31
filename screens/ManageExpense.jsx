@@ -27,29 +27,22 @@ function ManageExpense({ route, navigation }) {
   function cancelHandler() {
     navigation.goBack();
   }
-  function confirmHandler() {
+  function confirmHandler(expenseData) {
     if (isEditing) {
-      expensesCtx.updateExpense(
-        editedExpenseId,
-        {
-          description: 'Test',
-          amount: 29.99,
-          date: new Date()
-        }
-      );
+      expensesCtx.updateExpense(editedExpenseId, expenseData);
     } else {
-      expensesCtx.addExpense({
-        description: 'Test!!!',
-        amount: 19.99,
-        date: new Date()
-      });
+      expensesCtx.addExpense(expenseData);
     }
     navigation.goBack();
   }
 
   return (
     <View style={styles.rootContainer}>
-      <ExpenseForm submitButtonlabel={isEditing ? 'Update' : 'Add'} onCancel={cancelHandler}  />
+      <ExpenseForm
+        submitButtonlabel={isEditing ? 'Update' : 'Add'}
+        onCancel={cancelHandler}
+        onSubmit={confirmHandler}
+      />
       {isEditing && (
         <View style={styles.deleteContainer} >
           <IconButton color={GloableStyles.colors.Red} icon="delete" size={30} onPress={deleteExpenseHandler} />
@@ -62,7 +55,7 @@ function ManageExpense({ route, navigation }) {
 export default ManageExpense
 
 const styles = StyleSheet.create({
-  rootContainer:{
+  rootContainer: {
     padding: 16
   },
   deleteContainer: {
