@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, View } from "react-native"
 import { GloableStyles } from "../../constants/style";
 
-function Input({ label, style,textInputConfig }) {
+function Input({ label, invalid, style, textInputConfig }) {
 
   const inputStyles = [styles.input];
 
@@ -9,9 +9,13 @@ function Input({ label, style,textInputConfig }) {
     inputStyles.push(styles.inputMultiline)
   }
 
+  if (invalid) {
+    inputStyles.push(styles.invalidInput)
+  }
+
   return (
     <View style={[styles.inputContainer, style]}>
-      <Text style={styles.inputText} >{label}</Text>
+      <Text style={[styles.inputText, invalid && styles.invalidLabel]} >{label}</Text>
       <TextInput style={inputStyles} {...textInputConfig} />
     </View>
   )
@@ -35,10 +39,16 @@ const styles = StyleSheet.create({
     backgroundColor: GloableStyles.colors.Blue002,
     borderRadius: 10,
     fontSize: 18,
-    color: GloableStyles.colors.Blue005
+    color: GloableStyles.colors.Black
   },
   inputMultiline: {
     minHeight: 120,
     textAlignVertical: 'top'
+  },
+  invalidLabel:{
+    color: GloableStyles.colors.Red
+  },
+  invalidInput:{
+    backgroundColor: GloableStyles.colors.lightRed
   },
 });

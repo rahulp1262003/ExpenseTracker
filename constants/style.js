@@ -8,6 +8,7 @@ export const GloableStyles = {
         Black: '#000000',
         White: '#FFFFFF',
         Ripple: '#06073d53',
-        Red: '#ff6060'
+        Red: '#ff5b5b',
+        lightRed: '#ffb9b9'
     }
 }

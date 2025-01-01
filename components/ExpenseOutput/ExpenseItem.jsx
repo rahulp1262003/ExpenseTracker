@@ -4,8 +4,6 @@ import { useNavigation } from "@react-navigation/native";
 import { GloableStyles } from "../../constants/style";
 import { getFormattedDate } from "../../util/date";
 
-
-
 function ExpenseItem({ id, description, amount, date }) {
 
     const navigation = useNavigation();
@@ -42,9 +40,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
-    },
-    listContainer: {
-
     },
     listText: {
         fontSize: 19
