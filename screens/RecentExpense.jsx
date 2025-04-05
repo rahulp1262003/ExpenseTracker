@@ -18,7 +18,7 @@ function RecentExpense() {
 				const expenses = await fatchExpenses();
 				expensesCtx.setExpenses(expenses);
 			} catch (error) {
-				setError('Cou;d not fetch expenses !');
+				setError('Could not fetch expenses !');
 			}
 			setIsFatching(false);
 		}
