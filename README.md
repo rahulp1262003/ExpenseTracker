@@ -1,3 +1,8 @@
+
+<p align="left">
+  <img src="https://github.com/rahulp1262003/ExpenseTracker/blob/main/assets/expense.png" alt="Notes-TKing Logo" width="500"/>
+</p>
+
 # 📱 Expense Tracker App
 
 A simple and intuitive **React Native** app to track daily expenses. Built with performance in mind and a clean UI to manage your finances on the go.
